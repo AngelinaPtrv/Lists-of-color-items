@@ -7,7 +7,7 @@
     >
       <div class="image__info">
         <div>List {{ index + 1 }}</div>
-        <button
+        <button v-if="item.checked || item.checkedList"
             @click="changeOrder(item)"
             :for="index+1"
         >
@@ -40,6 +40,7 @@ export default {
 
   methods: {
     changeOrder(obj){
+      console.log(obj);
       obj.order = !obj.order;
     }
   }
