@@ -37,8 +37,12 @@ export default {
 <style>
 
 .app__wrap {
+  border: solid 1px black;
+  padding: 10px;
+  margin: auto;
+  width: 60vw;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 </style>

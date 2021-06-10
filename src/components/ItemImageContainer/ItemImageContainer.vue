@@ -46,8 +46,8 @@ export default {
 
 <style scoped>
 
-.images__wrap {
-  border: solid 1px black;
-}
+/*.images__wrap {*/
+/*  border: solid 1px black;*/
+/*}*/
 
 </style>

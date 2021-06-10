@@ -67,6 +67,10 @@ export default {
 
 <style scoped>
 
+.lists__container {
+  display: flex;
+}
+
 .lists__hide,
 .lists__items {
   display: none;
@@ -79,10 +83,6 @@ export default {
 
 .noselect {
   user-select: none;
-}
-
-.lists__container {
-  display: flex;
 }
 
 .checkbox__point {
