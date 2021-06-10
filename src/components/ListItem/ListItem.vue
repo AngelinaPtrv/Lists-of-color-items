@@ -8,8 +8,15 @@
       <div>Item {{ index + 1 }}</div>
     </div>
     <div class="items__input">
-      <input type="number" min="0" v-model="quantity"/>
-      <input type="color" v-model="item.color"/>
+      <input
+          type="number"
+          min="0"
+          v-model="quantity"
+      />
+      <input
+          type="color"
+          v-model="item.color"
+      />
     </div>
   </div>
 </template>
@@ -56,9 +63,19 @@ export default {
   display: flex;
 }
 
-.items__input input {
+input[type=number]{
   border: none;
-  width: 30px;
+  width: 35px;
+}
+
+input[type=number]:focus-visible{
+  outline: none;
+}
+
+input[type=color] {
+  background-color: white;
+  border: none;
+  width: 20px;
 }
 
 </style>

@@ -33,9 +33,8 @@ export default {
 
 .lists__wrap {
   border: black 1px solid;
-  width: 40%;
+  width: 43%;
+  padding: 15px;
 }
-
-
 
 </style>
