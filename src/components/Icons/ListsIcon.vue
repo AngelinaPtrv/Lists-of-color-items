@@ -6,16 +6,24 @@
        :aria-labelledby="iconName"
        role="presentation"
   >
-    <title :id="iconName" lang="en">{{iconName}} icon</title>
+    <title :id="iconName" lang="en">{{ iconName }} icon</title>
     <g :fill="iconColor">
-      <slot />
+      <icon-down-arrow v-if="visible"/>
+      <icon-right-arrow v-else/>
     </g>
   </svg>
 </template>
 
 <script>
+import IconRightArrow from '@/components/Icons/IconRightArrow';
+import IconDownArrow from '@/components/Icons/IconDownArrow';
+
 export default {
   name: "IconBase",
+  components: {
+    IconRightArrow,
+    IconDownArrow
+  },
 
   props: {
     iconName: {
@@ -33,6 +41,10 @@ export default {
     iconColor: {
       type: String,
       default: 'currentColor'
+    },
+    visible: {
+      type: Boolean,
+      default: false
     }
   }
 }
