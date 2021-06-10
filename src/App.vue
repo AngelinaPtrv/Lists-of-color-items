@@ -3,40 +3,33 @@
       id="app"
       class="app__wrap"
   >
-    <lists-of-items :quantity="quantityOfItems" />
-    <image-of-items :quantityOfColor="quantityColorItems"/>
+    <left-panel :lists="lists" />
+    <right-panel :lists="lists"/>
   </div>
 </template>
 
 <script>
 
-import ListsOfItems from '@/components/ListsOfItems/ListsOfItems';
-import ImageOfItems from '@/components/ImageOfItems/ImageOfItems';
+import LeftPanel from '@/components/LeftPanel/LeftPanel';
+import RightPanel from '@/components/RightPanel/RightPanel';
 
 export default {
   name: 'App',
 
   components: {
-    ListsOfItems,
-    ImageOfItems
+    LeftPanel,
+    RightPanel
   },
 
   data() {
     return {
-      quantityOfItems: [
-        {visible: false, items: 4, checkedItems: false, checkedItem: false, id: 1},
-        {visible: false, items: 6, checkedItems: false, checkedItem: false, id: 2},
-        {visible: false, items: 7, checkedItems: false, checkedItem: false, id: 3},
-        {visible: false, items: 9, checkedItems: false, checkedItem: false, id: 4},
-        {visible: false, items: 10, checkedItems: false, checkedItem: false, id: 5}
-      ]
+      lists: []
     }
   },
 
-  computed: {
-    quantityColorItems() {
-      return this.quantityOfItems.filter(list => list.checkedItems)
-    }
+  created() {
+    this.$store.dispatch('fillArrayOfItems')
+      .then(() => this.lists = this.$store.getters.getArrayOfItems)
   }
 }
 </script>
